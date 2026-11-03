@@ -28,75 +28,75 @@ export const TopNavbar: React.FC = () => {
       {/* Barra superior de acento con la tricolor cruceña verde-blanco-verde */}
       <div className="h-1 w-full bg-gradient-to-r from-[#0d592c] via-[#58b947] to-[#0d592c]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
         {/* Brand: Logo SCZ Departamental + Sombrero de Saó */}
-        <div className="flex items-center gap-3.5 shrink-0">
+        <div className="flex items-center gap-3 shrink-0">
           <a href="#" className="flex items-center gap-2 group">
             <img
               src="/logo-scz.png"
               alt="Santa Cruz"
-              className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </a>
 
-          <div className="hidden xl:flex items-center gap-2.5 pl-3.5 border-l border-emerald-300/80">
-            <SombreroSao className="w-7 h-7 drop-shadow-xs" />
+          <div className="hidden xl:flex items-center gap-2.5 pl-3 border-l border-emerald-300/80">
+            <SombreroSao className="w-7 h-7 drop-shadow-xs shrink-0" />
             <div className="flex flex-col">
-              <span className="text-[#0d592c] font-black text-sm tracking-tight uppercase font-sans">
+              <span className="text-[#0d592c] font-black text-sm tracking-tight uppercase font-sans whitespace-nowrap">
                 OJO CAMBA
               </span>
-              <span className="text-[10px] text-emerald-800/80 font-medium">
+              <span className="text-[10px] text-emerald-800/80 font-medium whitespace-nowrap">
                 Santa Cruz de la Sierra
               </span>
             </div>
           </div>
         </div>
 
-        {/* Center Pill Navigation Menu con degradé verde clarito y blanco + Espaciado holgado */}
-        <nav className="hidden lg:flex items-center gap-2.5 bg-gradient-to-r from-emerald-100/80 via-white to-emerald-100/80 border border-emerald-300/80 p-1.5 rounded-full shadow-sm text-xs font-semibold">
+        {/* Center Pill Navigation Menu con degradé verde clarito y blanco + Espaciado holgado sin saltos de línea */}
+        <nav className="hidden lg:flex items-center gap-1.5 xl:gap-3 bg-gradient-to-r from-emerald-100/90 via-white to-emerald-100/80 border border-emerald-300/90 px-3 py-1.5 rounded-full shadow-sm text-xs font-semibold">
           <a
             href="#"
-            className="px-5 py-2 bg-white text-[#0d592c] border border-emerald-300/70 rounded-full shadow-xs transition-all font-bold hover:shadow-sm"
+            className="px-4 py-1.5 bg-white text-[#0d592c] border border-emerald-300/80 rounded-full shadow-xs transition-all font-bold hover:shadow-sm whitespace-nowrap"
           >
             Inicio
           </a>
           <a
             href="#como-funciona"
-            className="px-4 py-2 text-slate-700 hover:text-[#0d592c] hover:bg-white/90 rounded-full transition-all"
+            className="px-3.5 py-1.5 text-slate-700 hover:text-[#0d592c] hover:bg-white/90 rounded-full transition-all whitespace-nowrap"
           >
             Cómo funciona
           </a>
           <a
             href="#funciones"
-            className="px-4 py-2 text-slate-700 hover:text-[#0d592c] hover:bg-white/90 rounded-full transition-all"
+            className="px-3.5 py-1.5 text-slate-700 hover:text-[#0d592c] hover:bg-white/90 rounded-full transition-all whitespace-nowrap"
           >
             Funciones
           </a>
           <a
             href="#probar-app"
-            className="px-4 py-2 text-slate-700 hover:text-[#0d592c] hover:bg-white/90 rounded-full transition-all"
+            className="px-3.5 py-1.5 text-slate-700 hover:text-[#0d592c] hover:bg-white/90 rounded-full transition-all whitespace-nowrap"
           >
             Probar la app
           </a>
-          <div className="w-px h-5 bg-emerald-300/80 mx-1" />
+          <div className="w-px h-5 bg-emerald-300/80 mx-0.5 shrink-0" />
           <a
             href="#emergencias"
-            className="px-4.5 py-2 text-red-600 hover:text-red-700 bg-red-50/90 hover:bg-red-100/90 border border-red-200/80 rounded-full transition-all flex items-center gap-1.5 font-bold shadow-2xs"
+            className="px-4 py-1.5 text-red-600 hover:text-red-700 bg-red-50/95 hover:bg-red-100/90 border border-red-200/90 rounded-full transition-all flex items-center gap-1.5 font-bold shadow-2xs whitespace-nowrap"
           >
-            <PhoneCall className="w-3.5 h-3.5" />
+            <PhoneCall className="w-3.5 h-3.5 shrink-0" />
             <span>Emergencias</span>
           </a>
         </nav>
 
         {/* Right CTA Actions */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           {/* Status backend pill */}
           <div
             title={backendOnline ? 'FastAPI + MongoDB Atlas Conectado' : 'Modo Resiliencia Activo'}
-            className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 bg-white/95 border border-emerald-300/70 rounded-full text-[11px] text-slate-700 font-medium shadow-2xs"
+            className="hidden 2xl:flex items-center gap-1.5 px-3 py-1.5 bg-white/95 border border-emerald-300/70 rounded-full text-[11px] text-slate-700 font-medium shadow-2xs whitespace-nowrap"
           >
             <span
-              className={`w-2 h-2 rounded-full ${
+              className={`w-2 h-2 rounded-full shrink-0 ${
                 backendOnline ? 'bg-[#58b947] animate-pulse' : 'bg-amber-400'
               }`}
             />
@@ -109,9 +109,9 @@ export const TopNavbar: React.FC = () => {
           <button
             type="button"
             onClick={() => setChatDrawerOpen(!chatDrawerOpen)}
-            className="hidden sm:flex items-center gap-2 px-4.5 py-2.5 bg-gradient-to-r from-emerald-100/90 via-white to-emerald-50 hover:from-emerald-200/80 hover:to-white border border-emerald-300 text-[#0d592c] rounded-full text-xs font-bold transition-all shadow-xs hover:shadow-sm active:scale-98"
+            className="hidden sm:flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-100/90 via-white to-emerald-50 hover:from-emerald-200/80 hover:to-white border border-emerald-300 text-[#0d592c] rounded-full text-xs font-bold transition-all shadow-xs hover:shadow-sm active:scale-98 whitespace-nowrap"
           >
-            <Bot className="w-4 h-4 text-[#0d592c]" />
+            <Bot className="w-4 h-4 text-[#0d592c] shrink-0" />
             <span>Centinela SCZ</span>
           </button>
 
@@ -119,9 +119,9 @@ export const TopNavbar: React.FC = () => {
           <button
             type="button"
             onClick={() => setReportModalOpen(true)}
-            className="px-5 py-2.5 bg-gradient-to-r from-red-600 via-red-500 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs rounded-full shadow-md shadow-red-500/25 flex items-center gap-2 transition-all active:scale-95"
+            className="px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-red-600 via-red-500 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs rounded-full shadow-md shadow-red-500/25 flex items-center gap-2 transition-all active:scale-95 whitespace-nowrap"
           >
-            <PlusCircle className="w-4 h-4" />
+            <PlusCircle className="w-4 h-4 shrink-0" />
             <span>Reportar Incidente</span>
           </button>
 
