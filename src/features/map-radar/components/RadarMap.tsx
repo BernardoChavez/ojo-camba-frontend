@@ -236,31 +236,7 @@ export const RadarMap: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-full overflow-hidden bg-slate-100">
-      {/* Live Map Legend */}
-      <MapLegend
-        stats={stats}
-        selectedFilter={selectedCategoryFilter}
-        onFilterChange={setSelectedCategoryFilter}
-      />
-
-      {/* Floating GPS Button */}
-      <div className="absolute bottom-6 right-6 z-[999] flex flex-col items-end gap-2">
-        {loading && (
-          <div className="px-3 py-1 bg-white/95 border border-slate-200 rounded-full text-[10px] text-[#0d592c] font-bold font-mono shadow-md backdrop-blur-md">
-            Sincronizando cuadrantes...
-          </div>
-        )}
-        <button
-          type="button"
-          onClick={handleLocateMe}
-          title="Centrar en mi ubicación GPS"
-          className="p-3 bg-white hover:bg-slate-50 text-[#0d592c] border border-slate-200 rounded-2xl shadow-xl transition-all active:scale-95"
-        >
-          <Navigation className="w-5 h-5 text-[#0d592c]" />
-        </button>
-      </div>
-
+    <div className="relative w-full h-full overflow-hidden bg-slate-100 isolate">
       <MapContainer
         center={SCZ_DEFAULT_CENTER}
         zoom={SCZ_DEFAULT_ZOOM}
@@ -478,6 +454,30 @@ export const RadarMap: React.FC = () => {
           </>
         )}
       </MapContainer>
+
+      {/* Live Map Legend (Flotante sobre el mapa, siempre visible y filtrable) */}
+      <MapLegend
+        stats={stats}
+        selectedFilter={selectedCategoryFilter}
+        onFilterChange={setSelectedCategoryFilter}
+      />
+
+      {/* Floating GPS Button */}
+      <div className="absolute bottom-6 right-6 z-[500] flex flex-col items-end gap-2">
+        {loading && (
+          <div className="px-3 py-1 bg-white/95 border border-slate-200 rounded-full text-[10px] text-[#0d592c] font-bold font-mono shadow-md backdrop-blur-md">
+            Sincronizando cuadrantes...
+          </div>
+        )}
+        <button
+          type="button"
+          onClick={handleLocateMe}
+          title="Centrar en mi ubicación GPS"
+          className="p-3 bg-white hover:bg-slate-50 text-[#0d592c] border border-slate-200 rounded-2xl shadow-xl transition-all active:scale-95"
+        >
+          <Navigation className="w-5 h-5 text-[#0d592c]" />
+        </button>
+      </div>
     </div>
   );
 };

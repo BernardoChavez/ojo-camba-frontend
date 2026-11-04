@@ -317,7 +317,7 @@ export const MainLayout: React.FC = () => {
         </div>
 
         {/* Interactive App Container en Blanco con Borde Suave */}
-        <div className="bg-white border border-slate-200/90 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+        <div className="bg-white border border-slate-200/90 rounded-3xl shadow-2xl overflow-hidden flex flex-col isolate">
           {/* App Top Toolbar */}
           <div className="p-4 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">
             {/* Left: View Mode Toggle + Time Slot Filter */}

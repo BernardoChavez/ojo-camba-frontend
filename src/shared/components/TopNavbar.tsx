@@ -24,7 +24,7 @@ export const TopNavbar: React.FC = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-[950] w-full bg-gradient-to-r from-emerald-100/70 via-white to-emerald-100/60 backdrop-blur-md border-b border-emerald-200 shadow-[0_4px_20px_-4px_rgba(13,89,44,0.08)]">
+    <header className="sticky top-0 z-[1200] w-full bg-gradient-to-r from-emerald-100/70 via-white to-emerald-100/60 backdrop-blur-md border-b border-emerald-200 shadow-[0_4px_20px_-4px_rgba(13,89,44,0.08)]">
       {/* Barra superior de acento con la tricolor cruceña verde-blanco-verde */}
       <div className="h-1 w-full bg-gradient-to-r from-[#0d592c] via-[#58b947] to-[#0d592c]" />
 
