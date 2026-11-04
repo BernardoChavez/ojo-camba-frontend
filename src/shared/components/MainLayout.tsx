@@ -22,6 +22,7 @@ import { SombreroSao } from './SombreroSao.tsx';
 import { RadarMap } from '@/features/map-radar/components/RadarMap.tsx';
 import { PatrolSidebar } from '@/features/patrol-command/components/PatrolSidebar.tsx';
 import { ReportModal } from '@/features/incident-reports/components/ReportModal.tsx';
+import { PublicReportsFeed } from '@/features/incident-reports/components/PublicReportsFeed.tsx';
 import { ChatDrawer } from '@/features/ai-assistant/components/ChatDrawer.tsx';
 import { useApp } from '@/core/store/AppContext.tsx';
 
@@ -370,9 +371,18 @@ export const MainLayout: React.FC = () => {
             {/* Right: Live stats & Quick Report Button */}
             <div className="flex items-center gap-3 text-xs">
               <div className="hidden sm:flex items-center gap-2 bg-white border border-slate-200 px-3.5 py-1.5 rounded-full font-mono text-[11px] shadow-xs">
-                <span className="text-red-600 font-bold">● Roja: {stats.redCount || 6}</span>
-                <span className="text-amber-600 font-bold">● Amarilla: {stats.yellowCount || 2}</span>
-                <span className="text-emerald-700 font-bold">● Verde: {stats.greenCount || 0}</span>
+                <span className="text-red-600 font-bold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-red-600 inline-block"></span>
+                  Roja: {stats.redCount}
+                </span>
+                <span className="text-amber-600 font-bold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-amber-500 inline-block"></span>
+                  Amarilla: {stats.yellowCount}
+                </span>
+                <span className="text-emerald-700 font-bold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-600 inline-block"></span>
+                  Verde: {stats.greenCount}
+                </span>
               </div>
 
               <button
@@ -399,7 +409,10 @@ export const MainLayout: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. Section: En una emergencia, llama primero */}
+      {/* 6. Módulo Público de Reportes por Zonas con Fotos y Detalles */}
+      <PublicReportsFeed />
+
+      {/* 7. Section: En una emergencia, llama primero */}
       <section id="emergencias" className="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="mb-8 text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-100/70 text-red-700 rounded-full text-xs font-bold mb-2">

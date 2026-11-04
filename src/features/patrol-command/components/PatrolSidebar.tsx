@@ -4,6 +4,8 @@ import {
   Route,
   PhoneCall,
   Siren,
+  EyeOff,
+  ChevronRight,
 } from 'lucide-react';
 import { useApp } from '@/core/store/AppContext.tsx';
 import { patrolService, PatrolRouteResponse } from '../services/patrol.service.ts';
@@ -12,6 +14,7 @@ export const PatrolSidebar: React.FC = () => {
   const { patrolActive, setPatrolActive, viewMode } = useApp();
   const [routeData, setRouteData] = useState<PatrolRouteResponse | null>(null);
   const [loading, setLoading] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     if (viewMode === 'COMMAND' || patrolActive) {
@@ -26,25 +29,57 @@ export const PatrolSidebar: React.FC = () => {
 
   if (viewMode !== 'COMMAND') return null;
 
+  // Render docked button when user chose to hide the command card
+  if (isCollapsed) {
+    return (
+      <button
+        type="button"
+        onClick={() => setIsCollapsed(false)}
+        className="absolute top-1/2 -translate-y-1/2 left-0 z-[900] bg-slate-900/95 text-cyan-400 border-y border-r border-cyan-500/50 rounded-r-2xl py-3 px-2 shadow-2xl flex flex-col items-center gap-1.5 cursor-pointer hover:bg-slate-800 hover:text-cyan-300 transition-all pointer-events-auto group animate-fadeIn"
+        title="Mostrar Centro de Comando 110"
+      >
+        <Siren className="w-5 h-5 text-cyan-400 animate-pulse group-hover:scale-110 transition-transform" />
+        <span className="text-[10px] font-mono font-bold tracking-wider [writing-mode:vertical-lr] rotate-180 text-slate-200">
+          COMANDO 110
+        </span>
+        <ChevronRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 transition-transform" />
+      </button>
+    );
+  }
+
+  const redSectorsCount =
+    routeData?.waypoints.filter((w) => w.risk_level === 'ZONA_ROJA').length || 5;
+
   return (
-    <aside className="w-80 h-full bg-scz-card/95 backdrop-blur-md border-r border-scz-border flex flex-col z-[900] shadow-2xl animate-fadeIn overflow-hidden">
-      {/* Header */}
+    <aside className="w-full sm:w-80 max-sm:absolute max-sm:inset-0 max-sm:z-[900] h-full bg-scz-card/95 backdrop-blur-md border-r border-scz-border flex flex-col z-[900] shadow-2xl animate-fadeIn overflow-hidden">
+      {/* Header with Title and Ocultar Button */}
       <div className="p-4 border-b border-scz-border bg-slate-900/80">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 shrink-0">
               <Siren className="w-5 h-5 animate-pulse" />
             </span>
-            <div>
-              <h2 className="text-xs font-bold text-slate-100 uppercase tracking-wider font-mono">
+            <div className="min-w-0">
+              <h2 className="text-xs font-bold text-slate-100 uppercase tracking-wider font-mono truncate">
                 Centro de Comando 110
               </h2>
-              <p className="text-[11px] text-cyan-400">Guardia Municipal & Policía SCZ</p>
+              <p className="text-[11px] text-cyan-400 truncate">Guardia Municipal & Policía SCZ</p>
             </div>
           </div>
+
+          {/* Botón para Ocultar panel */}
+          <button
+            type="button"
+            onClick={() => setIsCollapsed(true)}
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-medium transition-colors shrink-0"
+            title="Ocultar panel para ver el mapa completo"
+          >
+            <EyeOff className="w-3.5 h-3.5 text-cyan-400" />
+            <span>Ocultar</span>
+          </button>
         </div>
 
-        {/* Action button */}
+        {/* Action button: Trazar / Ocultar circuito */}
         <div className="mt-3">
           <button
             type="button"
@@ -56,7 +91,7 @@ export const PatrolSidebar: React.FC = () => {
             }`}
           >
             <Route className="w-4 h-4" />
-            <span>{patrolActive ? 'Ocultar Circuito de Patrulla' : 'Trazar Circuito Óptimo'}</span>
+            <span>{patrolActive ? 'Ocultar Circuito en Mapa' : 'Trazar Circuito Óptimo'}</span>
           </button>
         </div>
       </div>
@@ -65,11 +100,11 @@ export const PatrolSidebar: React.FC = () => {
       <div className="grid grid-cols-2 gap-2 p-3 border-b border-scz-border text-xs">
         <div className="p-2 bg-slate-900/80 rounded-lg border border-slate-800">
           <span className="text-[10px] text-slate-400 block">Focos Rojos Activos</span>
-          <span className="text-lg font-bold font-mono text-red-400">2 sectores</span>
+          <span className="text-lg font-bold font-mono text-red-400">{redSectorsCount} sectores</span>
         </div>
         <div className="p-2 bg-slate-900/80 rounded-lg border border-slate-800">
           <span className="text-[10px] text-slate-400 block">Tiempo Estimado Ronda</span>
-          <span className="text-lg font-bold font-mono text-emerald-400">38 min</span>
+          <span className="text-lg font-bold font-mono text-emerald-400">45 min</span>
         </div>
       </div>
 
@@ -78,7 +113,7 @@ export const PatrolSidebar: React.FC = () => {
         <div className="flex items-center justify-between text-xs font-semibold text-slate-300 px-1">
           <span>Waypoints Críticos Encadenados</span>
           <span className="text-[10px] text-cyan-400 font-mono">
-            {routeData?.total_waypoints || 0} Puntos
+            {routeData?.total_waypoints || 5} Puntos
           </span>
         </div>
 
@@ -94,7 +129,7 @@ export const PatrolSidebar: React.FC = () => {
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono font-bold text-cyan-400 flex items-center gap-1.5">
-                  <span className="w-5 h-5 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-[10px] flex items-center justify-center">
+                  <span className="w-5 h-5 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-[10px] flex items-center justify-center font-bold">
                     {wp.order}
                   </span>
                   <span>{wp.neighborhood}</span>
@@ -116,7 +151,7 @@ export const PatrolSidebar: React.FC = () => {
                 <span>
                   Coord: {wp.latitude.toFixed(4)}, {wp.longitude.toFixed(4)}
                 </span>
-                <span className="text-cyan-400 flex items-center gap-1">
+                <span className="text-cyan-400 flex items-center gap-1 font-semibold">
                   <Navigation2 className="w-3 h-3" />
                   <span>En Ruta</span>
                 </span>

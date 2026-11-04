@@ -45,10 +45,10 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState<string | null>(null);
   const [refreshTrigger, setRefreshTrigger] = useState<number>(0);
   const [stats, setStats] = useState<AppZoneStats>({
-    redCount: 6,
+    redCount: 5,
     yellowCount: 2,
-    greenCount: 0,
-    totalIncidents: 8,
+    greenCount: 2,
+    totalIncidents: 12,
   });
 
   const openReportAtCoords = (lat: number, lng: number) => {

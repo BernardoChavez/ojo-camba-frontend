@@ -1,0 +1,918 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "total_incidents_analyzed": 42,
+    "clusters_found": 9,
+    "red_zones_count": 5,
+    "yellow_zones_count": 2,
+    "green_zones_count": 2,
+    "city": "Santa Cruz de la Sierra, Bolivia",
+    "generated_at": "2026-11-04T00:34:52.528014+00:00"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -63.132537,
+              -17.8285
+            ],
+            [
+              -63.132838,
+              -17.827056
+            ],
+            [
+              -63.133698,
+              -17.825832
+            ],
+            [
+              -63.134983,
+              -17.825014
+            ],
+            [
+              -63.1365,
+              -17.824727
+            ],
+            [
+              -63.138017,
+              -17.825014
+            ],
+            [
+              -63.139302,
+              -17.825832
+            ],
+            [
+              -63.140162,
+              -17.827056
+            ],
+            [
+              -63.140463,
+              -17.8285
+            ],
+            [
+              -63.140162,
+              -17.829944
+            ],
+            [
+              -63.139302,
+              -17.831168
+            ],
+            [
+              -63.138017,
+              -17.831986
+            ],
+            [
+              -63.1365,
+              -17.832273
+            ],
+            [
+              -63.134983,
+              -17.831986
+            ],
+            [
+              -63.133698,
+              -17.831168
+            ],
+            [
+              -63.132838,
+              -17.829944
+            ],
+            [
+              -63.132537,
+              -17.8285
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "cluster_id": 101,
+        "zone_type": "ZONA_ROJA",
+        "color": "#E53935",
+        "risk_label": "Peligro Crítico - Foco de Robos y Asaltos",
+        "patrol_priority": "URGENTE",
+        "incident_count": 9,
+        "centroid": [
+          -63.1365,
+          -17.8285
+        ],
+        "radius_meters": 420,
+        "categories_breakdown": {
+          "ASALTO_MANO_ARMADA": 4,
+          "ROBO": 3,
+          "DISTURBIO_CALLEJERO": 2
+        },
+        "neighborhoods": [
+          "Plan 3000 - Rotonda El Mechero",
+          "Av. Paurito",
+          "Barrio Los Chacos",
+          "Curva del Plan"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -63.134226,
+              -17.789
+            ],
+            [
+              -63.134514,
+              -17.787625
+            ],
+            [
+              -63.135332,
+              -17.786459
+            ],
+            [
+              -63.136556,
+              -17.78568
+            ],
+            [
+              -63.138,
+              -17.785407
+            ],
+            [
+              -63.139444,
+              -17.78568
+            ],
+            [
+              -63.140668,
+              -17.786459
+            ],
+            [
+              -63.141486,
+              -17.787625
+            ],
+            [
+              -63.141774,
+              -17.789
+            ],
+            [
+              -63.141486,
+              -17.790375
+            ],
+            [
+              -63.140668,
+              -17.791541
+            ],
+            [
+              -63.139444,
+              -17.79232
+            ],
+            [
+              -63.138,
+              -17.792593
+            ],
+            [
+              -63.136556,
+              -17.79232
+            ],
+            [
+              -63.135332,
+              -17.791541
+            ],
+            [
+              -63.134514,
+              -17.790375
+            ],
+            [
+              -63.134226,
+              -17.789
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "cluster_id": 102,
+        "zone_type": "ZONA_ROJA",
+        "color": "#E53935",
+        "risk_label": "Peligro Crítico - Frecuencia de Motochorros y Arrebatos",
+        "patrol_priority": "URGENTE",
+        "incident_count": 8,
+        "centroid": [
+          -63.138,
+          -17.789
+        ],
+        "radius_meters": 400,
+        "categories_breakdown": {
+          "ROBO": 4,
+          "ASALTO_MANO_ARMADA": 3,
+          "CALLE_SIN_ILUMINACION": 1
+        },
+        "neighborhoods": [
+          "Villa 1ro de Mayo - Plaza Principal",
+          "Av. Cumavi",
+          "Tres Pasos al Frente",
+          "Mercado 1ro de Mayo"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -63.121415,
+              -17.765
+            ],
+            [
+              -63.121688,
+              -17.763694
+            ],
+            [
+              -63.122465,
+              -17.762586
+            ],
+            [
+              -63.123628,
+              -17.761846
+            ],
+            [
+              -63.125,
+              -17.761586
+            ],
+            [
+              -63.126372,
+              -17.761846
+            ],
+            [
+              -63.127535,
+              -17.762586
+            ],
+            [
+              -63.128312,
+              -17.763694
+            ],
+            [
+              -63.128585,
+              -17.765
+            ],
+            [
+              -63.128312,
+              -17.766306
+            ],
+            [
+              -63.127535,
+              -17.767414
+            ],
+            [
+              -63.126372,
+              -17.768154
+            ],
+            [
+              -63.125,
+              -17.768414
+            ],
+            [
+              -63.123628,
+              -17.768154
+            ],
+            [
+              -63.122465,
+              -17.767414
+            ],
+            [
+              -63.121688,
+              -17.766306
+            ],
+            [
+              -63.121415,
+              -17.765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "cluster_id": 103,
+        "zone_type": "ZONA_ROJA",
+        "color": "#E53935",
+        "risk_label": "Peligro Crítico - Puntos Ciegos y Atracos en Paradas",
+        "patrol_priority": "URGENTE",
+        "incident_count": 7,
+        "centroid": [
+          -63.125,
+          -17.765
+        ],
+        "radius_meters": 380,
+        "categories_breakdown": {
+          "ASALTO_MANO_ARMADA": 3,
+          "ROBO": 3,
+          "ZONA_PANDILLAS": 1
+        },
+        "neighborhoods": [
+          "Pampa de la Isla - 6to a 7mo Anillo",
+          "Av. Virgen de Cotoca",
+          "El Trillo",
+          "Barrio 23 de Diciembre"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -63.185898,
+              -17.7982
+            ],
+            [
+              -63.186149,
+              -17.796997
+            ],
+            [
+              -63.186865,
+              -17.795977
+            ],
+            [
+              -63.187936,
+              -17.795295
+            ],
+            [
+              -63.1892,
+              -17.795056
+            ],
+            [
+              -63.190464,
+              -17.795295
+            ],
+            [
+              -63.191535,
+              -17.795977
+            ],
+            [
+              -63.192251,
+              -17.796997
+            ],
+            [
+              -63.192502,
+              -17.7982
+            ],
+            [
+              -63.192251,
+              -17.799403
+            ],
+            [
+              -63.191535,
+              -17.800423
+            ],
+            [
+              -63.190464,
+              -17.801105
+            ],
+            [
+              -63.1892,
+              -17.801344
+            ],
+            [
+              -63.187936,
+              -17.801105
+            ],
+            [
+              -63.186865,
+              -17.800423
+            ],
+            [
+              -63.186149,
+              -17.799403
+            ],
+            [
+              -63.185898,
+              -17.7982
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "cluster_id": 104,
+        "zone_type": "ZONA_ROJA",
+        "color": "#E53935",
+        "risk_label": "Peligro Crítico - Descuideros y Arrebatos en Aglomeraciones",
+        "patrol_priority": "URGENTE",
+        "incident_count": 6,
+        "centroid": [
+          -63.1892,
+          -17.7982
+        ],
+        "radius_meters": 350,
+        "categories_breakdown": {
+          "ROBO": 4,
+          "ACCIDENTE_TRANSITO": 1,
+          "ASALTO_MANO_ARMADA": 1
+        },
+        "neighborhoods": [
+          "Mercado La Ramada",
+          "Av. Grigotá",
+          "1er y 2do Anillo Sur",
+          "Antigua Terminal"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -63.174603,
+              -17.848
+            ],
+            [
+              -63.174861,
+              -17.846762
+            ],
+            [
+              -63.175598,
+              -17.845713
+            ],
+            [
+              -63.1767,
+              -17.845012
+            ],
+            [
+              -63.178,
+              -17.844766
+            ],
+            [
+              -63.1793,
+              -17.845012
+            ],
+            [
+              -63.180402,
+              -17.845713
+            ],
+            [
+              -63.181139,
+              -17.846762
+            ],
+            [
+              -63.181397,
+              -17.848
+            ],
+            [
+              -63.181139,
+              -17.849238
+            ],
+            [
+              -63.180402,
+              -17.850287
+            ],
+            [
+              -63.1793,
+              -17.850988
+            ],
+            [
+              -63.178,
+              -17.851234
+            ],
+            [
+              -63.1767,
+              -17.850988
+            ],
+            [
+              -63.175598,
+              -17.850287
+            ],
+            [
+              -63.174861,
+              -17.849238
+            ],
+            [
+              -63.174603,
+              -17.848
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "cluster_id": 105,
+        "zone_type": "ZONA_ROJA",
+        "color": "#E53935",
+        "risk_label": "Peligro Crítico - Zonas a Oscuras y Falta de Patrullaje",
+        "patrol_priority": "URGENTE",
+        "incident_count": 5,
+        "centroid": [
+          -63.178,
+          -17.848
+        ],
+        "radius_meters": 360,
+        "categories_breakdown": {
+          "ROBO": 2,
+          "ASALTO_MANO_ARMADA": 2,
+          "CALLE_SIN_ILUMINACION": 1
+        },
+        "neighborhoods": [
+          "Los Lotes - 7mo a 8vo Anillo",
+          "Av. Santos Dumont",
+          "Palmar del Oratorio",
+          "Barrio El Palmar"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -63.172859,
+              -17.78
+            ],
+            [
+              -63.17306,
+              -17.779037
+            ],
+            [
+              -63.173632,
+              -17.778221
+            ],
+            [
+              -63.174489,
+              -17.777676
+            ],
+            [
+              -63.1755,
+              -17.777485
+            ],
+            [
+              -63.176511,
+              -17.777676
+            ],
+            [
+              -63.177368,
+              -17.778221
+            ],
+            [
+              -63.17794,
+              -17.779037
+            ],
+            [
+              -63.178141,
+              -17.78
+            ],
+            [
+              -63.17794,
+              -17.780963
+            ],
+            [
+              -63.177368,
+              -17.781779
+            ],
+            [
+              -63.176511,
+              -17.782324
+            ],
+            [
+              -63.1755,
+              -17.782515
+            ],
+            [
+              -63.174489,
+              -17.782324
+            ],
+            [
+              -63.173632,
+              -17.781779
+            ],
+            [
+              -63.17306,
+              -17.780963
+            ],
+            [
+              -63.172859,
+              -17.78
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "cluster_id": 201,
+        "zone_type": "ZONA_AMARILLA",
+        "color": "#FDD835",
+        "risk_label": "Precaución Moderada - Comercio Informal y Tránsito Intenso",
+        "patrol_priority": "MODERADA",
+        "incident_count": 4,
+        "centroid": [
+          -63.1755,
+          -17.78
+        ],
+        "radius_meters": 280,
+        "categories_breakdown": {
+          "ACCIDENTE_TRANSITO": 2,
+          "ROBO": 2
+        },
+        "neighborhoods": [
+          "Mercado Los Pozos",
+          "Calle Suárez Arana",
+          "Av. Brasil",
+          "Casco Central Este"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -63.202547,
+              -17.792
+            ],
+            [
+              -63.202734,
+              -17.791106
+            ],
+            [
+              -63.203266,
+              -17.790348
+            ],
+            [
+              -63.204061,
+              -17.789842
+            ],
+            [
+              -63.205,
+              -17.789664
+            ],
+            [
+              -63.205939,
+              -17.789842
+            ],
+            [
+              -63.206734,
+              -17.790348
+            ],
+            [
+              -63.207266,
+              -17.791106
+            ],
+            [
+              -63.207453,
+              -17.792
+            ],
+            [
+              -63.207266,
+              -17.792894
+            ],
+            [
+              -63.206734,
+              -17.793652
+            ],
+            [
+              -63.205939,
+              -17.794158
+            ],
+            [
+              -63.205,
+              -17.794336
+            ],
+            [
+              -63.204061,
+              -17.794158
+            ],
+            [
+              -63.203266,
+              -17.793652
+            ],
+            [
+              -63.202734,
+              -17.792894
+            ],
+            [
+              -63.202547,
+              -17.792
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "cluster_id": 202,
+        "zone_type": "ZONA_AMARILLA",
+        "color": "#FDD835",
+        "risk_label": "Precaución Moderada - Tráfico Pesado y Hurtos Rápidos",
+        "patrol_priority": "MODERADA",
+        "incident_count": 3,
+        "centroid": [
+          -63.205,
+          -17.792
+        ],
+        "radius_meters": 260,
+        "categories_breakdown": {
+          "ROBO": 2,
+          "ACCIDENTE_TRANSITO": 1
+        },
+        "neighborhoods": [
+          "Mercado Antiguo Abasto",
+          "Av. Piraí",
+          "3er Anillo Interno"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -63.194642,
+              -17.761
+            ],
+            [
+              -63.194821,
+              -17.760141
+            ],
+            [
+              -63.195333,
+              -17.759412
+            ],
+            [
+              -63.196098,
+              -17.758925
+            ],
+            [
+              -63.197,
+              -17.758754
+            ],
+            [
+              -63.197902,
+              -17.758925
+            ],
+            [
+              -63.198667,
+              -17.759412
+            ],
+            [
+              -63.199179,
+              -17.760141
+            ],
+            [
+              -63.199358,
+              -17.761
+            ],
+            [
+              -63.199179,
+              -17.761859
+            ],
+            [
+              -63.198667,
+              -17.762588
+            ],
+            [
+              -63.197902,
+              -17.763075
+            ],
+            [
+              -63.197,
+              -17.763246
+            ],
+            [
+              -63.196098,
+              -17.763075
+            ],
+            [
+              -63.195333,
+              -17.762588
+            ],
+            [
+              -63.194821,
+              -17.761859
+            ],
+            [
+              -63.194642,
+              -17.761
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "cluster_id": 301,
+        "zone_type": "ZONA_VERDE",
+        "color": "#43A047",
+        "risk_label": "Corredor Seguro - Vigilancia Activa e Iluminación LED",
+        "patrol_priority": "PREVENTIVA",
+        "incident_count": 0,
+        "centroid": [
+          -63.197,
+          -17.761
+        ],
+        "radius_meters": 250,
+        "categories_breakdown": {},
+        "neighborhoods": [
+          "Equipetrol Norte",
+          "Av. San Martín",
+          "Calle Güembé"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -63.190736,
+              -17.776
+            ],
+            [
+              -63.190908,
+              -17.775175
+            ],
+            [
+              -63.191399,
+              -17.774476
+            ],
+            [
+              -63.192134,
+              -17.774008
+            ],
+            [
+              -63.193,
+              -17.773844
+            ],
+            [
+              -63.193866,
+              -17.774008
+            ],
+            [
+              -63.194601,
+              -17.774476
+            ],
+            [
+              -63.195092,
+              -17.775175
+            ],
+            [
+              -63.195264,
+              -17.776
+            ],
+            [
+              -63.195092,
+              -17.776825
+            ],
+            [
+              -63.194601,
+              -17.777524
+            ],
+            [
+              -63.193866,
+              -17.777992
+            ],
+            [
+              -63.193,
+              -17.778156
+            ],
+            [
+              -63.192134,
+              -17.777992
+            ],
+            [
+              -63.191399,
+              -17.777524
+            ],
+            [
+              -63.190908,
+              -17.776825
+            ],
+            [
+              -63.190736,
+              -17.776
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "cluster_id": 302,
+        "zone_type": "ZONA_VERDE",
+        "color": "#43A047",
+        "risk_label": "Corredor Seguro - Sendero Estudiantil Universitario",
+        "patrol_priority": "PREVENTIVA",
+        "incident_count": 0,
+        "centroid": [
+          -63.193,
+          -17.776
+        ],
+        "radius_meters": 240,
+        "categories_breakdown": {},
+        "neighborhoods": [
+          "Campus Universitario UAGRM",
+          "Av. Busch y 2do Anillo"
+        ]
+      }
+    }
+  ]
+}

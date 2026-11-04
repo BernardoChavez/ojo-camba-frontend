@@ -29,34 +29,50 @@ export interface PatrolRouteResponse {
 }
 
 const MOCK_PATROL_ROUTE: PatrolRouteResponse = {
-  route_name: 'Circuito Alfa Centinela SCZ (Táctico)',
-  target_sector: 'Anillos y Radiales Críticos de Santa Cruz',
-  total_waypoints: 3,
-  risk_summary: 'Circuito preventivo enlazando focos de alta prioridad en Plan 3000, La Ramada y Casco Viejo.',
+  route_name: 'Circuito Centinela SCZ - Zonas Críticas',
+  target_sector: 'Plan 3000, Villa 1ro de Mayo, La Pampa, La Ramada y Los Lotes',
+  total_waypoints: 5,
+  risk_summary: 'Circuito preventivo de alta cobertura enlazando las zonas rojas de mayor riesgo delictivo en Santa Cruz.',
   waypoints: [
     {
       order: 1,
-      latitude: -17.8284,
-      longitude: -63.1364,
-      neighborhood: 'Plan 3000 - El Mechero',
+      latitude: -17.8285,
+      longitude: -63.1365,
+      neighborhood: 'Plan 3000 - Rotonda El Mechero',
       risk_level: 'ZONA_ROJA',
-      notes: 'Punto crítico con robos agravados en parada de micro. Requiere baliza y verificación.',
+      notes: 'Punto crítico con robos agravados y arrebatos en paradas de micro. Requiere baliza y verificación permanente.',
     },
     {
       order: 2,
+      latitude: -17.7890,
+      longitude: -63.1380,
+      neighborhood: 'Villa 1ro de Mayo - Plaza y Cumavi',
+      risk_level: 'ZONA_ROJA',
+      notes: 'Frecuencia de motochorros y arrebatos en tramos comerciales. Patrullaje disuasivo.',
+    },
+    {
+      order: 3,
+      latitude: -17.7650,
+      longitude: -63.1250,
+      neighborhood: 'La Pampa de la Isla - Av. Virgen de Cotoca',
+      risk_level: 'ZONA_ROJA',
+      notes: 'Intersección crítica y parada del trillo. Control de sospechosos en motocicletas sin placa.',
+    },
+    {
+      order: 4,
       latitude: -17.7981,
       longitude: -63.1894,
       neighborhood: 'Mercado La Ramada - Av. Grigotá',
       risk_level: 'ZONA_ROJA',
-      notes: 'Alta concentración de arrebatos y congestión de micros. Patrullaje disuasivo.',
+      notes: 'Alta aglomeración peatonal con presencia de descuideros y arrebatos en paradas.',
     },
     {
-      order: 3,
-      latitude: -17.7800,
-      longitude: -63.1755,
-      neighborhood: 'Mercado Los Pozos - Suárez Arana',
-      risk_level: 'ZONA_AMARILLA',
-      notes: 'Sector comercial con incidencias de motochorros en horario nocturno.',
+      order: 5,
+      latitude: -17.8480,
+      longitude: -63.1780,
+      neighborhood: 'Los Lotes - Palmar del Oratorio',
+      risk_level: 'ZONA_ROJA',
+      notes: 'Tramos con escasa iluminación y vías sin pavimentar. Refuerzo de rondas nocturnas.',
     },
   ],
   geojson: {
@@ -64,15 +80,17 @@ const MOCK_PATROL_ROUTE: PatrolRouteResponse = {
     geometry: {
       type: 'LineString',
       coordinates: [
-        [-63.1364, -17.8284],
+        [-63.1365, -17.8285],
+        [-63.1380, -17.7890],
+        [-63.1250, -17.7650],
         [-63.1894, -17.7981],
-        [-63.1755, -17.7800],
+        [-63.1780, -17.8480],
       ],
     },
     properties: {
-      route_name: 'Circuito Alfa Centinela SCZ',
+      route_name: 'Circuito Centinela SCZ - Zonas Críticas',
       target_department: 'Radio Patrulla 110 & Guardia Municipal SCZ',
-      active_waypoints_count: 3,
+      active_waypoints_count: 5,
     },
   },
 };
@@ -86,7 +104,7 @@ export const patrolService = {
       }
       return MOCK_PATROL_ROUTE;
     } catch {
-      console.info('📡 [PatrolService] Retornando ruta de patrullaje táctico mockeado.');
+      console.info('[PatrolService] Retornando circuito táctico de zonas rojas de Santa Cruz.');
       return MOCK_PATROL_ROUTE;
     }
   },

@@ -203,9 +203,96 @@ const MOCK_NEARBY_REPORTS: IncidentReportResponse[] = [
     created_at: new Date(Date.now() - 14400000).toISOString(),
     updated_at: new Date().toISOString(),
   },
+  {
+    id: 'mock-scz-10',
+    title: 'Arrebato por motochorros armados en Av. Cumavi',
+    description: 'Dos sujetos en motocicleta negra sin placa robaron cartera y celular encañonando a transeúnte.',
+    category: 'ASALTO_MANO_ARMADA',
+    severity: 'CRITICO',
+    status: 'VERIFICADO',
+    location: { type: 'Point', coordinates: [-63.1380, -17.7890] },
+    latitude: -17.7890,
+    longitude: -63.1380,
+    neighborhood: 'Villa 1ro de Mayo - Av. Cumavi',
+    anillo: 4,
+    reporter_alias: 'Vecino Villa Alerta',
+    confirmations_count: 14,
+    ai_triage: {
+      suggested_severity: 'CRITICO',
+      risk_score: 96,
+      immediate_danger: true,
+      dispatch_entity: '110 Radio Patrulla EPI 5',
+      short_summary: 'Asalto violento con arma de fuego en vía principal de La Villa.',
+      preventive_tip: 'Circule por aceras con iluminación y reporte motos sospechosas con dos pasajeros.',
+    },
+    created_at: new Date(Date.now() - 5400000).toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+  {
+    id: 'mock-scz-11',
+    title: 'Robo y persecución en parada de micro El Trillo',
+    description: 'Asaltantes aprovecharon la parada de micro para arrancar mochilas y escapar hacia las vías del tren.',
+    category: 'ROBO',
+    severity: 'ALTO',
+    status: 'VERIFICADO',
+    location: { type: 'Point', coordinates: [-63.1250, -17.7650] },
+    latitude: -17.7650,
+    longitude: -63.1250,
+    neighborhood: 'Pampa de la Isla - Av. Virgen de Cotoca',
+    anillo: 6,
+    reporter_alias: 'Vecina Pampa Central',
+    confirmations_count: 9,
+    ai_triage: {
+      suggested_severity: 'ALTO',
+      risk_score: 88,
+      immediate_danger: false,
+      dispatch_entity: 'Módulo Policial Pampa de la Isla EPI 7',
+      short_summary: 'Robo recurrente en punto ciego de El Trillo.',
+      preventive_tip: 'Espere el transporte en grupos organizados y no camine solo hacia las rieles.',
+    },
+    created_at: new Date(Date.now() - 9000000).toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+  {
+    id: 'mock-scz-12',
+    title: 'Atraco nocturno en calle oscura sin alumbrado',
+    description: 'Falta de postes de luz aprovechada por delincuentes para asaltar a trabajadores que volvían a sus casas.',
+    category: 'ASALTO_MANO_ARMADA',
+    severity: 'ALTO',
+    status: 'ACTIVO',
+    location: { type: 'Point', coordinates: [-63.1780, -17.8480] },
+    latitude: -17.8480,
+    longitude: -63.1780,
+    neighborhood: 'Los Lotes - Palmar del Oratorio',
+    anillo: 8,
+    reporter_alias: 'Comité Vecinal Los Lotes',
+    confirmations_count: 12,
+    ai_triage: {
+      suggested_severity: 'ALTO',
+      risk_score: 89,
+      immediate_danger: true,
+      dispatch_entity: '110 Radio Patrulla / Guardia Municipal',
+      short_summary: 'Zona vulnerable por falta de iluminación en Los Lotes.',
+      preventive_tip: 'Evite las calles de tierra sin iluminar de noche y coordine con vecinos de cuadra.',
+    },
+    created_at: new Date(Date.now() - 12000000).toISOString(),
+    updated_at: new Date().toISOString(),
+  },
 ];
 
 export const reportService = {
+  async getAllReports(): Promise<IncidentReportResponse[]> {
+    try {
+      const response = await httpClient.get<IncidentReportResponse[]>(ENDPOINTS.REPORTS.BASE);
+      if (response.data && response.data.length > 0) {
+        return response.data;
+      }
+      return MOCK_NEARBY_REPORTS;
+    } catch {
+      return MOCK_NEARBY_REPORTS;
+    }
+  },
+
   async getNearbyReports(
     latitude: number,
     longitude: number,

@@ -78,6 +78,12 @@ export const TopNavbar: React.FC = () => {
           >
             Probar la app
           </a>
+          <a
+            href="#reportes-comunitarios"
+            className="px-3.5 py-1.5 text-slate-700 hover:text-[#0d592c] hover:bg-white/90 rounded-full transition-all whitespace-nowrap"
+          >
+            Reportes
+          </a>
           <div className="w-px h-5 bg-emerald-300/80 mx-0.5 shrink-0" />
           <a
             href="#emergencias"
@@ -171,6 +177,13 @@ export const TopNavbar: React.FC = () => {
               className="py-2.5 px-3 rounded-xl hover:bg-emerald-100/50 hover:text-[#0d592c] transition-all"
             >
               Probar la app
+            </a>
+            <a
+              href="#reportes-comunitarios"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-2.5 px-3 rounded-xl hover:bg-emerald-100/50 hover:text-[#0d592c] transition-all"
+            >
+              Reportes Comunitarios
             </a>
             <a
               href="#emergencias"
