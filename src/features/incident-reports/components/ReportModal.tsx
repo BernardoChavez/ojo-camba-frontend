@@ -245,13 +245,27 @@ export const ReportModal: React.FC = () => {
   const capturePhotoFromCamera = () => {
     if (videoRef.current) {
       const video = videoRef.current;
+      const vw = video.videoWidth || 640;
+      const vh = video.videoHeight || 480;
+      const maxDim = 1200;
+      let width = vw;
+      let height = vh;
+      if (width > maxDim || height > maxDim) {
+        if (width > height) {
+          height = Math.round((height * maxDim) / width);
+          width = maxDim;
+        } else {
+          width = Math.round((width * maxDim) / height);
+          height = maxDim;
+        }
+      }
       const canvas = document.createElement('canvas');
-      canvas.width = video.videoWidth || 640;
-      canvas.height = video.videoHeight || 480;
+      canvas.width = width;
+      canvas.height = height;
       const ctx = canvas.getContext('2d');
       if (ctx) {
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+        ctx.drawImage(video, 0, 0, width, height);
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
         setPhotoBase64(dataUrl);
         setPhotoFileName(`foto-camara-${Date.now().toString().slice(-4)}.jpg`);
       }

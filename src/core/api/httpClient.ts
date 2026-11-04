@@ -3,7 +3,7 @@ import { API_BASE_URL } from './endpoints.ts';
 
 export const httpClient: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 8000,
+  timeout: 35000,
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
